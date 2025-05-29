@@ -1,0 +1,40 @@
+
+table {
+    width: fit-content;
+    border-collapse: collapse; 
+}
+
+
+table,td {
+    border: 1px solid black; 
+}
+
+td {
+    padding: 10px; 
+    text-align: left; 
+    height: 50px;
+}
+
+.back{
+    height: 50%;
+    width: 150%;
+}
+.color1{
+    background-color: aqua;
+}
+.color2{background-color: blue;}
+.color3{background-color: brown;}
+.color4{background-color: chartreuse;}
+.color5{background-color: cadetblue;}
+.color6{background-color: black;}
+
+.bg-img{
+
+        background-image: url('https://static.vecteezy.com/system/resources/thumbnails/001/225/154/small_2x/black-low-poly-geometric-background.jpg');
+        background-size: cover;   
+        background-position: center;
+        height: 100px; 
+       
+      
+      
+}
