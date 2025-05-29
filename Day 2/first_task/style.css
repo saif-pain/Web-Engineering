@@ -1,6 +1,6 @@
 
 table {
-    width: fit-content;
+    width: 100%;
     border-collapse: collapse; 
 }
 
@@ -13,6 +13,7 @@ td {
     padding: 10px; 
     text-align: left; 
     height: 50px;
+    color: black;
 }
 
 .back{
@@ -26,7 +27,7 @@ td {
 .color3{background-color: brown;}
 .color4{background-color: chartreuse;}
 .color5{background-color: cadetblue;}
-.color6{background-color: black;}
+.color6{background-color: burlywood;}
 
 .bg-img{
 
@@ -37,4 +38,8 @@ td {
        
       
       
+}
+
+.custom-td{
+    size: 50px;
 }
