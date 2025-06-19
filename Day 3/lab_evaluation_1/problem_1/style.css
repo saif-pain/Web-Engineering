@@ -1,0 +1,49 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+td,th {
+    border: 1px solid black; 
+    padding: 20px;
+}
+
+td {
+    padding: 10px; 
+    text-align: center; 
+    height: 50px;
+    color: black;
+}
+
+.d{
+    text-align: center;
+}
+.p{
+    text-align: left;
+}
+.a{
+    padding: 50px;
+    background-color: gray;
+    text-align: left;
+}
+.s{
+    display: flex;
+    justify-content: right;
+    margin-top: 20px;
+}
+.middle{
+    padding: 20px;
+}
+.color_1{
+    background-color: dimgrey;
+}
+.color_2{
+    background-color:darksalmon;
+}
+.color_3{
+    background-color: aqua;
+    padding: 50px;
+    margin-top: 20px;
+}
+.color_4{
+    color: blue;
+}
