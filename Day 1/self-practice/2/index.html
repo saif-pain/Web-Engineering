@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Chess Club Registration</title>
+  <style>
+    .error { color: red; }
+  </style>
+</head>
+<body>
+  <h1>Chess Club Registration</h1>
+  <form id="chessForm" onsubmit="return validateForm()">
+    <!-- Full Name -->
+    Full Name: <input type="text" id="fullName"><br>
+    <span id="nameError" class="error"></span><br>
+
+    <!-- Email -->
+    Email: <input type="text" id="email"><br>
+    <span id="emailError" class="error"></span><br>
+
+    <!-- Password -->
+    Password: <input type="password" id="password"><br>
+    <span id="passError" class="error"></span><br>
+
+    <!-- Confirm Password -->
+    Confirm Password: <input type="password" id="confirmPassword"><br>
+    <span id="confirmError" class="error"></span><br>
+
+    <!-- Country -->
+    Country:
+    <select id="country">
+      <option value="">Select</option>
+      <option>Bangladesh</option>
+      <option>India</option>
+      <option>USA</option>
+    </select><br>
+    <span id="countryError" class="error"></span><br>
+
+    <!-- FIDE ID -->
+    FIDE ID (optional): <input type="text" id="fideId"><br>
+    <span id="fideError" class="error"></span><br>
+
+    <!-- Skill Level -->
+    Skill Level:
+    <select id="skillLevel">
+      <option value="">Select</option>
+      <option>Beginner</option>
+      <option>Intermediate</option>
+      <option>Advanced</option>
+      <option>Master</option>
+    </select><br>
+    <span id="skillError" class="error"></span><br>
+
+    <!-- Time Controls -->
+    Preferred Time Controls:<br>
+    <input type="checkbox" name="timeControl" value="Bullet"> Bullet<br>
+    <input type="checkbox" name="timeControl" value="Blitz"> Blitz<br>
+    <input type="checkbox" name="timeControl" value="Rapid"> Rapid<br>
+    <input type="checkbox" name="timeControl" value="Classical"> Classical<br>
+    <span id="timeError" class="error"></span><br><br>
+
+    <button type="submit">Register</button>
+  </form>
+
+  <div id="confirmation" style="margin-top:20px;"></div>
+
+  <script>
+    function validateForm() {
+      let valid = true;
+
+      // Reset all errors
+      document.querySelectorAll(".error").forEach(el => el.innerText = "");
+
+      let name = document.getElementById("fullName").value;
+      let email = document.getElementById("email").value;
+      let password = document.getElementById("password").value;
+      let confirm = document.getElementById("confirmPassword").value;
+      let country = document.getElementById("country").value;
+      let fideId = document.getElementById("fideId").value;
+      let skill = document.getElementById("skillLevel").value;
+
+      let timeControls = document.querySelectorAll("input[name='timeControl']:checked");
+
+      // Name validation
+      if (name.length < 3 || !/^[A-Za-z ]+$/.test(name)) {
+        document.getElementById("nameError").innerText = "Enter a valid name (only letters, min 3 chars)";
+        valid = false;
+      }
+
+      // Email validation
+      if (!/^\S+@\S+\.\S+$/.test(email)) {
+        document.getElementById("emailError").innerText = "Enter a valid email.";
+        valid = false;
+      }
+
+      // Password validation
+      if (password.length < 8 || !/[0-9]/.test(password) || !/[!@#$%^&*]/.test(password)) {
+        document.getElementById("passError").innerText = "Password must be 8+ chars with a number & special character.";
+        valid = false;
+      }
+
+      if (password !== confirm) {
+        document.getElementById("confirmError").innerText = "Passwords do not match.";
+        valid = false;
+      }
+
+      if (country === "") {
+        document.getElementById("countryError").innerText = "Please select a country.";
+        valid = false;
+      }
+
+      if (fideId && !/^FIDE-\d{4}$/.test(fideId)) {
+        document.getElementById("fideError").innerText = "FIDE ID must be in format FIDE-1234.";
+        valid = false;
+      }
+
+      if (skill === "") {
+        document.getElementById("skillError").innerText = "Please select a skill level.";
+        valid = false;
+      }
+
+      if (timeControls.length === 0) {
+        document.getElementById("timeError").innerText = "Select at least one time control.";
+        valid = false;
+      }
+
+      if (valid) {
+        let timeValues = Array.from(timeControls).map(el => el.value).join(", ");
+        document.getElementById("confirmation").innerHTML =
+          `<h3>Registration Successful!</h3>
+          <p><b>Name:</b> ${name}</p>
+          <p><b>Email:</b> ${email}</p>
+          <p><b>Country:</b> ${country}</p>
+          <p><b>FIDE ID:</b> ${fideId || "N/A"}</p>
+          <p><b>Skill Level:</b> ${skill}</p>
+          <p><b>Time Controls:</b> ${timeValues}</p>`;
+      }
+
+      return false; // prevent form from submitting
+    }
+  </script>
+</body>
+</html>
