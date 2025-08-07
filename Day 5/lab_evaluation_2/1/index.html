@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dynamic Matrix</title>
+</head>
+<body>
+  <h1>Matrix Operations</h1>
+
+  <input type="number" id="rowInput" placeholder="Enter Matrix Row"><br>
+  <input type="number" id="colInput" placeholder="Enter Matrix Column"><br><br>
+
+  <button onclick="createMatrix()">Generate</button><br><br>
+  <div id="matrix-container"></div>
+
+
+  <input type="radio" name="matrix" id="transpose" value="transpose">Transpose<br>
+  <input type="radio" name="matrix" id="sumDiagonal" value="Sum Diagonal"> Sum Diagonal<br>
+  <input type="radio" name="matrix" id="checkSymmetry" value="Check Symmetry">Check Symmetric<br><br>
+  <button id="calculate" onclick="calculatedMatrix()">Calculate</button>
+
+    <p id="result"></p>
+
+  <script>
+    function createMatrix() {
+      let r = document.getElementById("rowInput").value;
+      let c = document.getElementById("colInput").value;
+      
+    }
+  </script>
+</body>
+</html>

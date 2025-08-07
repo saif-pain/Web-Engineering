@@ -1,0 +1,12 @@
+.error { color: red; }
+
+#confirmation{
+    margin-top: 20px;
+    background-color: wheat;
+    padding: 20px;
+}
+
+body{
+    text-align: center;
+    background-color: aquamarine;
+}

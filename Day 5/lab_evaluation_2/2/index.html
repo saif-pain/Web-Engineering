@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Music Club Registration</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Music Club Registration</h1>
+  <form id="musicForm" onsubmit="return validateForm()">
+
+    Full Name: <input type="text" id="fullName"><br>
+    <span id="nameError" class="error"></span><br>
+
+    Email: <input type="text" id="email"><br>
+    <span id="emailError" class="error"></span><br>
+
+
+    Password: <input type="password" id="password"><br>
+    <span id="passError" class="error"></span><br>
+
+    
+    Confirm Password: <input type="password" id="confirmPassword"><br>
+    <span id="confirmError" class="error"></span><br>
+
+    
+    Instrument:
+    <select id="instrument">
+      <option value="">Select</option>
+      <option>Guitar</option>
+      <option>Piano</option>
+      <option>Violin</option>
+      <option>Drums</option>
+    </select><br>
+    <span id="instrumentError" class="error"></span><br>
+
+    
+    Skill Level:
+    <select id="skillLevel">
+      <option value="">Select</option>
+      <option>Beginner</option>
+      <option>Intermediate</option>
+      <option>Advanced</option>
+      <option>Professional</option>
+    </select><br>
+    <span id="skillError" class="error"></span><br>
+
+    Years of Experience(optional):
+    <input type="number" id="expId"><br>
+    <span id="experienceError" class="error"></span><br>
+
+    Preferred Genres:<br>
+    <input type="checkbox" name="genre" value="Classical"> Classical<br>
+    <input type="checkbox" name="genre" value="Jazz"> Jazz<br>
+    <input type="checkbox" name="genre" value="Rock"> Rock<br>
+    <input type="checkbox" name="genre" value="Electronic"> Electronic<br>
+    <input type="checkbox" name="genre" value="Other"> Other<br>
+    <span id="genreError" class="error"></span><br><br>
+
+    <button type="submit">Register</button>
+  </form>
+
+  <div id="confirmation"></div>
+
+  <script src="script.js"></script>
+
+    
+</body>
+
+</html>
+
+
+
+
+    
+    
